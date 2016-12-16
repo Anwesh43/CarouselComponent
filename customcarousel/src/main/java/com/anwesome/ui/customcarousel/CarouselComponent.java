@@ -35,7 +35,7 @@ public class CarouselComponent {
         appCompatActivity.setContentView(R.layout.carousel_container);
         FrameLayout frameLayout = (FrameLayout)appCompatActivity.findViewById(R.id.container);
 
-        float x = size.x/2-((carouselFragmentList.size())*25)/2;
+        float x = size.x/2-((carouselFragmentList.size())*AppConstants.BUTTON_GAP)/2;
         for(int i=0;i<carouselFragmentList.size();i++) {
             Button button = new Button(appCompatActivity.getApplicationContext());
             CircleDrawable circleDrawable = new CircleDrawable();
@@ -45,8 +45,8 @@ public class CarouselComponent {
             button.setBackground(circleDrawable);
             button.setY(size.y*0.3f);
             button.setX(x);
-            x+=25;
-            frameLayout.addView(button,new ViewGroup.LayoutParams(20,20));
+            x+=AppConstants.BUTTON_GAP;
+            frameLayout.addView(button,new ViewGroup.LayoutParams(AppConstants.BUTTON_SIZE,AppConstants.BUTTON_SIZE));
             buttons.add(button);
         }
         ToggleButtonsComponent toggleButtonsComponent = new ToggleButtonsComponent(buttons);

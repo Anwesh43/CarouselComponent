@@ -5,4 +5,6 @@ package com.anwesome.ui.customcarousel;
  */
 public class AppConstants {
     public final static int TITLE_FONT_SIZE = 70;
+    public final static int BUTTON_SIZE = 40;
+    public final static int BUTTON_GAP = 50;
 }

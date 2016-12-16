@@ -17,25 +17,25 @@ public class CarouselLayout  {
     public CarouselLayout(AppCompatActivity activity, List<CarouselFragment> fragments,final ToggleButtonsComponent toggleButtonsComponent) {
         viewPager = (ViewPager) activity.findViewById(R.id.vp);
         viewPager.setAdapter(new CarouselAdapter(activity.getSupportFragmentManager(),fragments));
+        toggleButtonsComponent.changePageAccordingToButton(viewPager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                    ;
-                }
+            }
 
-                @Override
-                public void onPageSelected(int position) {
-                    toggleButtonsComponent.activateCurrentButton(position);
+            @Override
+            public void onPageSelected(int position) {
+                toggleButtonsComponent.activateCurrentButton(position);
+            }
 
-                }
+            @Override
+            public void onPageScrollStateChanged(int state) {
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
+            }
+        });
 
-                }
-            });
-        }
+    }
 
     class CarouselAdapter extends FragmentStatePagerAdapter {
         private List<CarouselFragment> fragments;
