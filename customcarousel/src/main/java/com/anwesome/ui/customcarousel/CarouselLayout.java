@@ -36,7 +36,7 @@ public class CarouselLayout  {
                 }
             });
         }
-    
+
     class CarouselAdapter extends FragmentStatePagerAdapter {
         private List<CarouselFragment> fragments;
         public CarouselAdapter(FragmentManager fragmentManager,List<CarouselFragment> fragments) {
