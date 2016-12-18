@@ -24,6 +24,7 @@ public class CarouselComponent {
         CarouselFragment fragment = new CarouselFragment();
         fragment.setImage(object.getBitmap());
         fragment.setText(object.getText());
+        fragment.setClickListener(object.getClickListener());
         carouselFragmentList.add(fragment);
     }
     public void create() {
